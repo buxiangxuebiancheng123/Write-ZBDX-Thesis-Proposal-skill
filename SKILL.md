@@ -81,10 +81,10 @@ Write approx. 150-200 words per minor sub-point:
 **Section 6: 工作计划 (Work Plan)**
 - Create a milestone-driven timeline with concrete deliverables for each phase.
 
-### Phase 3: DOCX Generation
-Once all sections are drafted and approved, you MUST use the bundled script to generate the DOCX file. The script precisely inserts the content into the existing template without arbitrarily altering its native format.
-Do NOT write your own python script. Run the following command:
-```bash
-python /home/dmh/.gemini/antigravity-cli/skills/write-thesis-proposal/scripts/build_proposal_docx.py <directory_with_markdown_sections> <output_docx_path>
-```
-Provide the final `.docx` file path to the user.
+The following optimizations have been injected into `write-thesis-proposal`:
+
+1.  **Red Flag Against "假大空" (Empty Claims):** Added a rule preventing the agent from making generic claims about feasibility or research gaps without rigorous academic reasoning.
+2.  **Explicit Research Gap (Section 2.1):** Enforced a strict logical chain ("What has been done -> What is missing -> Why it matters") to clearly define the "Scientific Problem" and "Research Gap."
+3.  **Visual Technical Route (Section 3.2.2):** Demanded the generation of a `Mermaid` flowchart to visually explain the system architecture/algorithm step-by-step.
+4.  **Tri-dimensional Feasibility Analysis (Section 3.2.3):** Forced the breakdown of feasibility into Theoretical, Technical, and Platform/Data dimensions.
+5.  **GB/T 7714-2015 Citation Standard (Section 5):** Hardcoded the requirement to format the 40+ references strictly according to the Chinese national academic standard.
